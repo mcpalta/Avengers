@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block bgr %}
+{% static 'core/assets/img/characters-bg.jpg' %}
+{% endblock %}
+
+{% block content %}
+<div class="container px-4 px-lg-5">
+    <h1>Personajes</h1>
+    <hr>
+    <div class="row">
+        {% for c in characters %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{{ c.img.url }}" class="card-img-top" alt="{{ c.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ c.name }}</h5>
+                    <p class="card-text">{{ c.description|truncatewords:20 }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Paginación -->
+    <nav>
+        <ul class="pagination justify-content-center">
+            {% if characters.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ characters.previous_page_number }}">Anterior</a>
+                </li>
+            {% endif %}
+            {% for num in characters.paginator.page_range %}
+                <li class="page-item {% if characters.number == num %}active{% endif %}">
+                    <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                </li>
+            {% endfor %}
+            {% if characters.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ characters.next_page_number }}">Siguiente</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+<!-- core/templates/core/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avengers</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'core/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link href="{% static 'core/css/styles.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">Avengers</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'movies:list' %}">Películas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'characters:list' %}">Personajes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'comics:list' %}">Comics</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Banner -->
+    <header class="masthead" style="background-image: url('{% block bgr %}{% static "core/assets/img/home-bg.jpg" %}{% endblock %}')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading text-center text-white">
+                        <h1>Avengers</h1>
+                        <span class="subheading">Bienvenido al Universo Marvel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-top bg-dark text-white mt-5 py-4 text-center">
+        &copy; 2025 Avengers Project
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'core/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Scripts personalizados -->
+    <script src="{% static 'core/js/scripts.js' %}"></script>
+</body>
+</html>

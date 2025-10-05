@@ -1,0 +1,14 @@
+<!-- core/templates/core/home.html -->
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block bgr %}
+{% static 'core/assets/img/home-bg.jpg' %}
+{% endblock %}
+
+{% block content %}
+<div class="container px-4 px-lg-5">
+    <h1>Bienvenido a Avengers</h1>
+    <p>Noticias, películas, personajes y comics del universo Marvel.</p>
+</div>
+{% endblock %}

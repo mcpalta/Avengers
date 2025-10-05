@@ -1,0 +1,83 @@
+/* core/static/core/css/styles.css */
+
+/* Fonts y colores generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #fff;
+}
+
+/* Navbar personalizado */
+.navbar {
+    background-color: #0d0d0d !important;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f44336 !important;
+}
+
+/* Banner / Header */
+.masthead {
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-heading h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.site-heading .subheading {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px #000;
+}
+
+/* Cards */
+.card {
+    background-color: #1a1a1a;
+    border: none;
+    color: #fff;
+}
+
+.card .card-title {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.card .card-text {
+    color: #ccc;
+}
+
+/* Footer */
+footer {
+    background-color: #0d0d0d;
+    color: #fff;
+}
+
+/* Pagination */
+.pagination .page-item .page-link {
+    color: #fff;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #f44336;
+    border-color: #f44336;
+    color: #fff;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: #f44336;
+    border-color: #f44336;
+}
