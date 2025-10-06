@@ -3,9 +3,10 @@ body {
 }
 .card-title-1.text-primary.text-center.mt-4.mb-3 {
     color: #ff0000 !important;
-    font-size: 2rem;  /* tamaño grande para h1 */
+    font-size: 2rem;  
     font-weight: bold;
 }
+
 
 .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;

@@ -17,7 +17,15 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+.subheading {
+    color: #f41818 !important;
+    font-size: 5.5rem;  
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 2px 2px 4px #ff0000;
+}
 .site-heading h1 {
     font-size: 0.1rem;
     text-shadow: 2px 2px 5px #c70000;
