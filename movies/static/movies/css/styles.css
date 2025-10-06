@@ -1,0 +1,86 @@
+body {
+  background-color: #1f1f1f;
+}
+.card-title-1.text-primary.text-center.mt-4.mb-3 {
+    color: #ff0000 !important;
+    font-size: 2rem;  /* tamaño grande para h1 */
+    font-weight: bold;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.h1 {
+  color: #8ef400 !important;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 0.1rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px #ff0000;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+.card-title {
+  color: #f41818 !important;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border-color: #000000;
+}
+.card-img-top {
+  height: 380px;
+  object-fit: cover;
+  border-bottom: 2px solid #000000;
+}
+
+.pagination .page-link {
+  background-color: #1a1a1a;
+  color: #f8f9fa;
+  border: none;
+}
+
+.pagination .active .page-link {
+  background-color: #007bff;
+  border: none;
+}
+::-webkit-textfield-decoration-container {
+  background-color: #f10000;
+  color: #f8f9fa;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+.col-md-4.mb-4:hover {
+  background-color: #070707;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(255, 0, 0, 0.995);
+}
+.page-item.active .page-link {
+  background-color: #101010;
+  border: none;
+}
+/* Fecha de estreno */
+.card-body .text-muted.small {
+  color: #ffffff;
+}
+.pagination {
+  margin-top: 30px;
+}
+.page-link {
+  background-color: #1f2833;
+  color: #66fcf1;
+  border: 1px solid #45a29e;
+  transition: background-color 0.3s ease;
+}
+.page-link:hover {
+  background-color: #45a29e;
+  color: #0b0c10;
+}
+
+.page-item.active .page-link {
+  background-color: #66fcf1;
+  color: #0b0c10;
+  border: none;
+}

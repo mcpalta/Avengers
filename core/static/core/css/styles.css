@@ -19,8 +19,8 @@ body {
 }
 
 .site-heading h1 {
-    font-size: 4rem;
-    text-shadow: 2px 2px 5px #ffffff;
+    font-size: 0.1rem;
+    text-shadow: 2px 2px 5px #c70000;
 }
 
 .site-heading .subheading {

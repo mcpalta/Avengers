@@ -5,19 +5,27 @@
 {% static 'core/assets/img/movies-bg.jpg' %}
 {% endblock %}
 
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'movies/css/styles.css' %}">
+{% endblock %}
+
+
 {% block content %}
 <div class="container px-4 px-lg-5">
-    <h1>Películas</h1>
+    <!--<h1 class="text-center mt-4 mb-3">Películas de Marvel</h1>-->
+    <h1 class="card-title-1 text-primary text-center mt-4 mb-3">Películas de Marvel</h1>
+
     <hr>
     <div class="row">
         {% for m in movies %}
         <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="card h-100 shadow-sm border-0">
                 <img src="{{ m.poster.url }}" class="card-img-top" alt="{{ m.title }}">
                 <div class="card-body">
-                    <h5 class="card-title">{{ m.title }}</h5>
-                    <p class="card-text">{{ m.description|truncatewords:20 }}</p>
-                    <p class="text-muted">Estreno: {{ m.release_date }}</p>
+                    <h5 class="card-title text-primary">{{ m.title }}</h5>
+                    <p class="card-text text-muted">{{ m.description|truncatewords:20 }}</p>
+                    <p class="text-muted small">Estreno: {{ m.release_date }}</p>
                 </div>
             </div>
         </div>
@@ -26,7 +34,7 @@
 
     <!-- Paginación -->
     <nav>
-        <ul class="pagination justify-content-center">
+        <ul class="pagination justify-content-center mt-4">
             {% if movies.has_previous %}
                 <li class="page-item">
                     <a class="page-link" href="?page={{ movies.previous_page_number }}">Anterior</a>

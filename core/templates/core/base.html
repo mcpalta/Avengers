@@ -10,8 +10,12 @@
     
     <!-- Bootstrap CSS -->
     <link href="{% static 'core/css/bootstrap.min.css' %}" rel="stylesheet">
-    <!-- Estilos personalizados -->
-    <link href="{% static 'core/css/styles.css' %}" rel="stylesheet">
+    <!-- Estilos globales de Core -->
+    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+
+
+    <!-- CSS extra por app -->
+    {% block extra_css %}{% endblock %}
 </head>
 
 <body>
