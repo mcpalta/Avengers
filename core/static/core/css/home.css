@@ -1,0 +1,27 @@
+.masthead {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 80vh;
+  filter: brightness(70%);
+}
+
+.carousel-caption {
+  bottom: 25%;
+}
+
+.carousel-caption h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  color: #fff;
+}
