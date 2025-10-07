@@ -2,37 +2,49 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/home.css' %}">
+{% endblock %}
+
+
 {% block bgr %}
-
-<!-- Header / Banner con carrusel -->
 <header class="masthead">
-  <div id="avengersCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div id="avengersCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+
+
+    <!-- Indicadores -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#avengersCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#avengersCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#avengersCarousel" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- Slides -->
     <div class="carousel-inner">
-
       <div class="carousel-item active">
-        <img src="{% static 'core/assets/img/home-bg.jpg' %}" class="d-block w-100" alt="Banner 1">
+        <img src="{% static 'core/assets/img/home-bg.png' %}" class="d-block w-100" alt="Banner 1">
         <div class="carousel-caption d-none d-md-block">
-          <h1>Avengers</h1>
-          <p>Bienvenido al Universo Marvel</p>
+          <h1>Peter Parker</h1>
+          <p>Su vecino y amigo el Hombre Araña</p>
         </div>
       </div>
 
       <div class="carousel-item">
-        <img src="{% static 'core/assets/img/ironman-bg.jpg' %}" class="d-block w-100" alt="Banner 2">
+        <img src="{% static 'core/assets/img/fantastic-bg.jpg' %}" class="d-block w-100" alt="Banner 2">
         <div class="carousel-caption d-none d-md-block">
-          <h1>Iron Man</h1>
-          <p>El genio, millonario y filántropo de los Avengers</p>
+          <h1>Reed Richards / Mr. Fantástico</h1>
+          <p>Un científico muy inteligente y líder de los Cuatro Fantásticos</p>
         </div>
       </div>
 
       <div class="carousel-item">
-        <img src="{% static 'core/assets/img/captain-bg.jpg' %}" class="d-block w-100" alt="Banner 3">
+        <img src="{% static 'core/assets/img/robert-bg.jpg' %}" class="d-block w-100" alt="Banner 3">
         <div class="carousel-caption d-none d-md-block">
-          <h1>Captain America</h1>
-          <p>El primer vengador y símbolo de esperanza</p>
+          <h1>Alexander Goodwin Pierce</h1>
+          <p>El líder de Hydra operando dentro de S.H.I.E.L.D</p>
         </div>
       </div>
-
     </div>
 
     <!-- Controles -->
@@ -44,11 +56,13 @@
     </button>
   </div>
 </header>
+
 {% endblock %}
+
 
 {% block content %}
 <div class="container px-4 px-lg-5">
     <h1>Bienvenido a Avengers</h1>
-    <p>Noticias, películas, personajes y comics del universo Marvel.</p>
+    <p>Películas, personajes y comics del universo Marvel.</p>
 </div>
 {% endblock %}

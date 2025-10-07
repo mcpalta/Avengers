@@ -1,27 +1,79 @@
+/* Carrusel principal */
 .masthead {
   position: relative;
-  height: 80vh;
+  height: 85vh;
   overflow: hidden;
 }
 
 .carousel-item img {
   object-fit: cover;
-  height: 80vh;
+  height: 85vh;
   filter: brightness(70%);
+  transition: transform 0.8s ease-in-out;
 }
 
+.carousel-item.active img {
+  transform: scale(1.02);
+}
+
+/* Efecto fade */
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+}
+
+/* Indicadores */
+.carousel-indicators button {
+  background-color: #c70000;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+  opacity: 0.7;
+}
+
+.carousel-indicators .active {
+  opacity: 1;
+  background-color: #ff0000;
+}
+
+/* Controles */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%) sepia(100%) saturate(1000%) hue-rotate(0deg);
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  filter: invert(42%) sepia(98%) saturate(2000%) hue-rotate(350deg);
+}
+
+/* Texto del carrusel */
 .carousel-caption {
-  bottom: 25%;
+  bottom: 20%;
+  text-shadow: 2px 2px 8px #000;
 }
 
 .carousel-caption h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  text-transform: uppercase;
+  font-size: 3.5rem;
+  font-weight: 700;
   color: #fff;
+  text-transform: uppercase;
 }
 
 .carousel-caption p {
   font-size: 1.2rem;
   color: #fff;
+}
+
+.carousel-item {
+  transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+}
+
+.carousel-fade .carousel-item.active img {
+  transform: scale(1.05);
 }

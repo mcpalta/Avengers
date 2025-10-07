@@ -27,9 +27,11 @@ body {
     text-shadow: 2px 2px 4px #ff0000;
 }
 .site-heading h1 {
-    font-size: 0.1rem;
+    font-size: 3rem; /* o 4rem si quieres más grande */
     text-shadow: 2px 2px 5px #c70000;
+    font-weight: bold;
 }
+
 
 .site-heading .subheading {
     font-size: 1.5rem;
@@ -76,66 +78,111 @@ footer {
     border-color: #f44336;
 }
 
+/* --- NAVBAR ESTILO MARVEL CON EFECTO DE LOGO --- */
 .navbar {
-    background: linear-gradient(90deg, #0d0d0d 0%, #1a1a1a 100%);
+    background-color: #0a0a0a;
+    box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
+    padding: 0.75rem 1.5rem;
+    transition: background 0.4s ease-in-out;
     font-family: 'Poppins', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
+
+.navbar:hover {
+    background-color: #111;
+}
+
+/* --- LOGO / BRAND --- */
 .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     color: #fff;
-    font-size: 1.5rem;
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease;
+    background: linear-gradient(90deg, #ff0000 0%, #ff4444 40%, #ffffff 50%, #ff0000 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.6s ease;
 }
 
 .navbar-brand:hover {
-    color: #780000 ;
+    background-position: 200% center;
+    transform: scale(1.08);
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+/* --- NAV LINKS --- */
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    gap: 1.5rem;
 }
 
 .navbar-nav .nav-link {
-    color: #ccc ;
-    margin-left: 1rem;
-    transition: color 0.3s ease, transform 0.2s;
-    font-weight: 500;
-    list-style: none;
+    color: #e0e0e0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
-    color: #ff3b3b ;
-    transform: scale(1.05);
+.navbar-nav .nav-link:hover {
+    color: #ff1e1e;
 }
 
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: #ff1e1e;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Ícono menú hamburguesa */
 .navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    background: transparent;
 }
 
 .navbar-toggler-icon {
     filter: invert(100%);
 }
 
-/* Espaciado del contenido por navbar fija */
-body {
-    padding-top: 70px;
-}
-.grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 2fr));
-        gap: 30px;
-        padding-bottom: 50px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-/* Responsividad */
+/* --- RESPONSIVE --- */
 @media (max-width: 992px) {
+    .navbar-nav {
+        flex-direction: column;
+        background-color: #0d0d0d;
+        width: 100%;
+        padding: 1rem 0;
+    }
 
     .navbar-nav .nav-link {
-        margin: 0.5rem 0;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
     }
 }
-    .navbar-nav {
-    display: flex;
-    flex-direction: row; /* Esto hace que los <li> estén en fila */
-    list-style: none;
-    text-align: center;
+
+.card-title-1.text-center.mt-4.mb-3 {
+    color: #ff0000 !important;
+    font-size: 2rem;  
+    font-weight: bold;
 }
 

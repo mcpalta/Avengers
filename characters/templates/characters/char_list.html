@@ -2,13 +2,8 @@
 {% load static %}
 
 {% block bgr %}
-{% static 'core/assets/img/characters-bg.jpg' %}
-{% endblock %}
-
-{% block content %}
-
     <!-- Header / Banner -->
-<header class="masthead"></header>
+<header class="masthead">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
@@ -20,8 +15,13 @@
         </div>
     </div>
 </header>
+{% endblock %}
+
+{% block content %}
+
 <div class="container px-4 px-lg-5">
-    <h1>Personajes</h1>
+    <h1 class="card-title-1 text-center mt-4 mb-3">Personajes</h1>
+
     <hr>
     <div class="row">
         {% for c in characters %}
@@ -30,7 +30,7 @@
                 <img src="{{ c.img.url }}" class="card-img-top" alt="{{ c.name }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ c.name }}</h5>
-                    <p class="card-text">{{ c.description|truncatewords:20 }}</p>
+                    <p class="text-warning small">{{ c.description|truncatewords:20 }}</p>
                 </div>
             </div>
         </div>

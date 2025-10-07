@@ -2,16 +2,8 @@
 {% load static %}
 
 {% block bgr %}
-{% static 'core/assets/img/movies-bg.jpg' %}
-{% endblock %}
-
-
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'movies/css/styles.css' %}">
-{% endblock %}
-
     <!-- Header / Banner -->
-<header class="masthead"></header>>
+<header class="masthead">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
@@ -23,27 +15,37 @@
         </div>
     </div>
 </header>
+{% endblock %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'movies/css/styles.css' %}">
+{% endblock %}
+
+
 
 {% block content %}
 <div class="container px-4 px-lg-5">
     <!--<h1 class="text-center mt-4 mb-3">Películas de Marvel</h1>-->
     <h1 class="card-title-1 text-primary text-center mt-4 mb-3">Películas de Marvel</h1>
 
-    <hr>
-    <div class="row">
-        {% for m in movies %}
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm border-0">
-                <img src="{{ m.poster.url }}" class="card-img-top" alt="{{ m.title }}">
-                <div class="card-body">
-                    <h5 class="card-title text-primary">{{ m.title }}</h5>
-                    <p class="card-text text-muted">{{ m.description|truncatewords:20 }}</p>
-                    <p class="text-muted small">Estreno: {{ m.release_date }}</p>
-                </div>
+<div class="row grid-container">
+    {% for m in movies %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+            <img src="{{ m.poster.url }}" class="card-img-top" alt="{{ m.title }}">
+            <div class="card-body">
+                <!-- Título -->
+                <h5 class="card-title text-primary">{{ m.title }}</h5>
+                <!-- Descripción en color claro para visibilidad sobre fondo oscuro -->
+                <p class="card-text text-light">{{ m.description|truncatewords:20 }}</p>
+                <!-- Fecha de estreno con un color un poco más brillante -->
+                <p class="text-warning small">Estreno: {{ m.release_date }}</p>
             </div>
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
+</div>
 
     <!-- Paginación -->
     <nav>
